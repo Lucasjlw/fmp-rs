@@ -5,18 +5,18 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "camelCase")]
 pub struct FMPHistoricalPrice {
     pub date: String,
-    pub open: f64,
-    pub high: f64,
-    pub low: f64,
-    pub close: f64,
-    pub adj_close: f64,
+    pub open: Option<f64>,
+    pub high: Option<f64>,
+    pub low: Option<f64>,
+    pub close: Option<f64>,
+    pub adj_close: Option<f64>,
     pub volume: Option<f64>,
     pub unadjusted_volume: Option<f64>,
-    pub change: f64,
-    pub change_percent: f64,
+    pub change: Option<f64>,
+    pub change_percent: Option<f64>,
     pub vwap: Option<f64>,
     pub label: String,
-    pub change_over_time: f64,
+    pub change_over_time: Option<f64>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
