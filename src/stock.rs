@@ -85,12 +85,4 @@ impl Client {
         ))
         .await
     }
-
-    pub async fn tradable_symbols(&self) -> Result<Vec<FMPPartialStock>, StatusCode> {
-        request(format!(
-            "{}/v3/available-traded/list?apikey={}",
-            self.base, self.api_key,
-        ))
-        .await
-    }
 }
